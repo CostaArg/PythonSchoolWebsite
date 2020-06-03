@@ -24,7 +24,6 @@ h1 {
 }
 
 input[type="text"],
-input[type="password"],
 textarea,
 select {
   background: rgba(255,255,255,0.1);
@@ -54,6 +53,8 @@ button {
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
   margin-bottom: 10px;
+  text-shadow: 0px 1px 0px #2f6627;
+  cursor: pointer;
 }
 
 form {
@@ -92,6 +93,13 @@ form {
     text-decoration:none;
     text-shadow: 0px 1px 0px #2f6627;
     margin-bottom: 15px;
-  }
-
 }
+
+    .center {
+      margin-left:auto;
+      margin-right:auto;
+      margin-bottom: 15px;
+      margin-top: 5%;
+      text-align: center;
+      }
+  }
