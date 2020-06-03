@@ -13,7 +13,7 @@ def new_student():
 @app.route('/addrecord',methods = ['POST', 'GET'])
 def addrecord():
    if request.method == 'POST':
-      msg = "Unknown Error"
+      msg = "If you see this, something went wrong..."
       try:
          name = request.form['name']
          address = request.form['address']
@@ -22,7 +22,7 @@ def addrecord():
 
          with sql.connect("database.db") as con:
             cur = con.cursor()
-            cur.execute("INSERT INTO students (name,address,city,zipcode) VALUES(?,?,?,?)",(name,address,city,zipcode))
+            cur.execute("INSERT INTO students (name,address,city,zipcode) VALUES(?,?,?,?)", (name,address,city,zipcode))
             con.commit()
             msg = "Record successfully added"
       except:
@@ -30,7 +30,7 @@ def addrecord():
          msg = "Error in insert operation"
 
       finally:
-         return render_template("result.html",msg = msg)
+         return render_template("result.html", msg = msg)
          con.close()
 
 @app.route('/list')
@@ -42,7 +42,7 @@ def list():
    cur.execute("select * from students")
 
    rows = cur.fetchall();
-   return render_template("list.html",rows = rows)
+   return render_template("list.html", rows = rows)
 
 if __name__ == '__main__':
    app.run(debug = True)
