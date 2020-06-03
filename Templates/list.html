@@ -1,34 +1,31 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='board.css') }}">
-<link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet" type='text/css'>
-<title>List</title>
-<body>
-
-<a class="homeButton" href="/">Home</a>
-<form>
-  <h1>Student List</h1>
-      <table class="center" border = 1>
-         <thead>
-            <td><b>Name</b></td>
-            <td><b>Address</b></td>
-            <td><b>City</b></td>
-            <td><b>Zip Code</b></td>
-         </thead>
-
-         {% for row in rows %}
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='board.css') }}">
+      <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet" type='text/css'>
+      <title>List</title>
+   <body>
+      <a class="homeButton" href="/">Home</a>
+      <form>
+         <h1>Student List</h1>
+         <table class="center" border = 1>
+            <thead>
+               <td><b>Name</b></td>
+               <td><b>Address</b></td>
+               <td><b>City</b></td>
+               <td><b>Zip Code</b></td>
+            </thead>
+            {% for row in rows %}
             <tr>
                <td>{{row["name"]}}</td>
                <td>{{row["address"]}}</td>
                <td>{{row["city"]}}</td>
                <td>{{row["zipcode"]}}</td>
             </tr>
-         {% endfor %}
-      </table>
-</form>
-
+            {% endfor %}
+         </table>
+      </form>
    </body>
 </html>
