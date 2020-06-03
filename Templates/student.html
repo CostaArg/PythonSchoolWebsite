@@ -1,21 +1,33 @@
+<!DOCTYPE html>
 <html>
-   <body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='form.css') }}">
+<link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet" type='text/css'>
+<title>Student Information</title>
+</head>
+<body>
+<a class="homeButton" href="/">Home</a>
 
-      <form action = "{{ url_for('addrecord') }}" method = "POST">
-         <h3>Student Information</h3>
-         Name<br>
-         <input type = "text" name = "name" /></br>
+<form action = "{{ url_for('addrecord') }}" method = "POST">
+<h1>Student Information</h1>
+<fieldset>
+<label for="name">Name:</label>
+<input type="text" name="name">
 
-         Address<br>
-         <textarea name = "address" ></textarea><br>
+<label for="password">Password:</label>
+<input type="password" name="password">
 
-         City<br>
-         <input type = "text" name = "city" /><br>
+<label for="city">City:</label>
+<input type="text" name="city">
 
-         Zip Code<br>
-         <input type = "text" name = "zipcode" /><br>
-         <input type = "submit" value = "submit" /><br>
-      </form>
+<label for="zipcode">Zip Code:</label>
+<input type="text" name="zipcode">
+</fieldset>
 
-   </body>
+<button type="submit">Submit</button>
+</form>
+
+</body>
 </html>
